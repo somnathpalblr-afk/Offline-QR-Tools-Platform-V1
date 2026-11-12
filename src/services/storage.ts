@@ -41,4 +41,5 @@ export async function clearAllLocalData() {
   const db = await database;
   await Promise.all([db.clear("qr_history"), db.clear("user_settings"), db.clear("favorites")]);
   localStorage.clear();
+  window.scanprogoTheme.reset();
 }

@@ -1,16 +1,28 @@
-import { ChevronDown, Menu, Moon, ShieldCheck, WifiOff, X } from "lucide-react";
+import { ChevronDown, Menu, Moon, Sun, ShieldCheck, WifiOff, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router";
 import { tools } from "../data/tools";
+import { useTheme } from "../app/ThemeProvider";
 import { Logo } from "./Logo";
 
 export function Layout() {
+  const { theme, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   const [installEvent, setInstallEvent] = useState<Event | null>(null);
   const [online, setOnline] = useState(navigator.onLine);
   const location = useLocation();
 
-  useEffect(() => setMenuOpen(false), [location.pathname]);
+  useEffect(() => {
+    setMenuOpen(false);
+    const tool = tools.find((item) => location.pathname === `/${item.id}`);
+    const section = { "/about": "About", "/privacy": "Privacy", "/contact": "Contact" }[location.pathname];
+    const title = tool ? `${tool.name} – ScanProGo` : section ? `${section} – ScanProGo` : "ScanProGo – Offline QR & Barcode Toolkit";
+    const description = tool ? `${tool.description} ScanProGo — Scan • Generate • Go.` : "ScanProGo — Scan • Generate • Go. Generate, scan and decode QR codes and barcodes privately on your device.";
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", description);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", description);
+  }, [location.pathname]);
   useEffect(() => {
     const status = () => setOnline(navigator.onLine);
     const capture = (event: Event) => {
@@ -50,8 +62,8 @@ export function Layout() {
             {online ? <ShieldCheck size={14} /> : <WifiOff size={14} />}
             {online ? "Local processing" : "Working offline"}
           </span>
-          <button className="icon-button theme-button" aria-label="Toggle appearance">
-            <Moon size={19} />
+          <button className="icon-button theme-button" onClick={toggleTheme} aria-label={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`} title={`${theme === "dark" ? "Dark" : "Light"} Mode — click to switch`} aria-pressed={theme === "dark"}>
+            {theme === "dark" ? <Sun size={19} /> : <Moon size={19} />}
           </button>
           <button className="button small" onClick={install}>
             Install App
@@ -59,7 +71,7 @@ export function Layout() {
           <button
             className="icon-button menu-button"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            aria-label="Toggle menu" aria-expanded={menuOpen}
           >
             {menuOpen ? <X /> : <Menu />}
           </button>
@@ -70,6 +82,7 @@ export function Layout() {
             <Link to="/qr-code-generator">All Tools</Link>
             <Link to="/about">About</Link>
             <Link to="/privacy">Privacy</Link>
+            <Link to="/contact">Contact</Link>
           </div>
         )}
       </header>
@@ -94,7 +107,7 @@ export function Layout() {
           <span>No tracking</span>
         </div>
         <div className="footer-bottom">
-          © {new Date().getFullYear()} QR Tools. Built for privacy.
+          © {new Date().getFullYear()} ScanProGo. Built for privacy.
         </div>
       </footer>
     </div>

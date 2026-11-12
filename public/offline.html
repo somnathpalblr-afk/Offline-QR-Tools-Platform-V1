@@ -3,23 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>QR Tools – Offline</title>
+    <title>ScanProGo – Offline</title>
+    <script src="/theme.js"></script>
+    <link rel="icon" href="/favicon.png" />
     <style>
+      [data-theme="dark"] { --bg: #0b1425; --fg: #edf3ff; --card: #152238; --border: #354b68; }
       body {
         font-family: system-ui;
         margin: 0;
         min-height: 100vh;
         display: grid;
         place-items: center;
-        background: #f4f8ff;
-        color: #07132f;
+        background: var(--bg, #fff);
+        color: var(--fg, #07132f);
       }
       .card {
         max-width: 440px;
         margin: 24px;
         padding: 36px;
-        background: #fff;
-        border: 1px solid #dce6f4;
+        background: var(--card, #f8fafc);
+        border: 1px solid var(--border, #dce6f4);
         border-radius: 18px;
         text-align: center;
       }
@@ -37,12 +40,13 @@
   </head>
   <body>
     <main class="card">
+      <img src="/brand/scanprogo-logo.png" width="280" style="max-width:100%;height:auto;background:white;border-radius:8px" alt="ScanProGo — Scan • Generate • Go" />
       <h1>You’re offline</h1>
       <p>
-        QR Tools works offline after the application has been installed and cached. Return to the
+        ScanProGo works offline after the application has been installed and cached. Return to the
         app to use available local tools.
       </p>
-      <a href="/">Open QR Tools</a>
+      <a href="/">Open ScanProGo</a>
     </main>
   </body>
 </html>
