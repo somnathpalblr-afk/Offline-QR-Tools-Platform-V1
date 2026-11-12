@@ -123,7 +123,7 @@ const formMap: Record<string, { fields: Field[]; defaults: FormValues }> = {
       { key: "phone", label: "Phone number", placeholder: "+1 555 123 4567" },
       { key: "message", label: "SMS message", type: "textarea", placeholder: "Type your message" },
     ],
-    defaults: { phone: "+15551234567", message: "Hello from QR Tools!" },
+    defaults: { phone: "+15551234567", message: "Hello from ScanProGo!" },
   },
   "location-qr-code-generator": {
     fields: [
@@ -200,10 +200,7 @@ export function ToolPage() {
       <BulkTool />
     ) : null;
 
-  useEffect(() => {
-    document.title = `${tool.name} – Free Offline Tool`;
-    document.querySelector('meta[name="description"]')?.setAttribute("content", tool.description);
-  }, [tool]);
+
 
   return (
     <div className="tool-layout">

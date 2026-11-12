@@ -20,6 +20,7 @@ export function HomePage() {
           <div className="eyebrow">
             <Check size={14} /> 100% Offline · No Backend Required
           </div>
+          <p className="brand-tagline">ScanProGo · Scan • Generate • Go</p>
           <h1>
             All-in-One QR &<br />
             Barcode <span>Toolkit</span>
@@ -31,7 +32,7 @@ export function HomePage() {
             </Link>
             <button
               className="button secondary"
-              onClick={() => alert("Use your browser menu to install QR Tools.")}
+              onClick={() => alert("Use your browser menu to install ScanProGo.")}
             >
               Install App
             </button>
@@ -111,7 +112,7 @@ export function HomePage() {
         <span className="eyebrow blue">PRIVATE BY DESIGN</span>
         <h2>Everything you need, nothing you don't.</h2>
         <p>
-          QR Tools is built for people who want powerful utilities without trading away their data.
+          ScanProGo is built for people who want powerful utilities without trading away their data.
           Every code is generated locally in your browser.
         </p>
         <div className="feature-grid">

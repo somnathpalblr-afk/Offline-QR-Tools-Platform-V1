@@ -9,7 +9,7 @@ export function InfoPage({ type }: { type: "about" | "privacy" | "contact" }) {
       icon: Sparkles,
       title: "Useful tools. Thoughtful privacy.",
       intro:
-        "QR Tools is an offline-first utility suite designed to make everyday QR and barcode tasks fast, accessible and private.",
+        "ScanProGo is an offline-first utility suite designed to make everyday QR and barcode tasks fast, accessible and private.",
     },
     privacy: {
       icon: ShieldCheck,
@@ -27,7 +27,7 @@ export function InfoPage({ type }: { type: "about" | "privacy" | "contact" }) {
   return (
     <section className="info-page">
       <content.icon />
-      <span className="eyebrow blue">QR TOOLS</span>
+      <span className="eyebrow blue">ScanProGo</span>
       <h1>{content.title}</h1>
       <p>{content.intro}</p>
       <div className="info-card">
@@ -40,7 +40,7 @@ export function InfoPage({ type }: { type: "about" | "privacy" | "contact" }) {
           <button
             className="button secondary"
             onClick={async () => {
-              if (confirm("Delete all QR Tools history and preferences stored on this device?")) {
+              if (confirm("Delete all ScanProGo history and preferences stored on this device?")) {
                 await clearAllLocalData();
                 setCleared(true);
               }

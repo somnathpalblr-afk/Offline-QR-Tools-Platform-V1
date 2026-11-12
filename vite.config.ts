@@ -23,13 +23,13 @@ export default defineConfig(({ mode }) => {
       tailwindcss(),
       VitePWA({
         registerType: "autoUpdate",
-        includeAssets: ["favicon.svg", "offline.html"],
+        includeAssets: ["favicon.png", "offline.html", "theme.js"],
         manifest: {
-          name: "QR Tools – Offline QR & Barcode Toolkit",
-          short_name: "QR Tools",
-          description: "Generate, scan and decode QR codes and barcodes privately on your device.",
+          name: "ScanProGo – Offline QR & Barcode Toolkit",
+          short_name: "ScanProGo",
+          description: "ScanProGo — Scan • Generate • Go. Generate, scan and decode QR codes and barcodes privately on your device.",
           theme_color: "#0969f6",
-          background_color: "#f4f8ff",
+          background_color: "#ffffff",
           display: "standalone",
           start_url: "/",
           icons: [
