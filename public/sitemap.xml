@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>/</loc></url>
+  <url><loc>/qr-code-generator</loc></url>
+  <url><loc>/qr-code-scanner</loc></url>
+  <url><loc>/wifi-qr-code-generator</loc></url>
+  <url><loc>/whatsapp-qr-code-generator</loc></url>
+  <url><loc>/barcode-generator</loc></url>
+  <url><loc>/vcard-qr-code-generator</loc></url>
+  <url><loc>/email-qr-code-generator</loc></url>
+  <url><loc>/phone-qr-code-generator</loc></url>
+  <url><loc>/sms-qr-code-generator</loc></url>
+  <url><loc>/location-qr-code-generator</loc></url>
+  <url><loc>/google-review-qr-code-generator</loc></url>
+  <url><loc>/social-media-qr-code-generator</loc></url>
+  <url><loc>/qr-code-with-logo</loc></url>
+  <url><loc>/qr-code-decoder</loc></url>
+  <url><loc>/bulk-qr-code-generator</loc></url>
+</urlset>
