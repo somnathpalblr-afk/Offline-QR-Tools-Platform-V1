@@ -27,6 +27,9 @@
         border-radius: 18px;
         text-align: center;
       }
+      .logo-dark { display: none; }
+      [data-theme="dark"] .logo-light { display: none; }
+      [data-theme="dark"] .logo-dark { display: inline; }
       a {
         display: inline-block;
         margin-top: 15px;
@@ -41,7 +44,8 @@
   </head>
   <body>
     <main class="card">
-      <img src="/brand/scanprogo-logo.png" width="280" style="max-width:100%;height:auto;background:white;border-radius:8px" alt="ScanProGo — Scan • Generate • Go" />
+      <img class="logo-light" src="/brand/scanprogo-logo.png" width="280" style="max-width:100%;height:auto" alt="ScanProGo — Scan • Generate • Go" />
+      <img class="logo-dark" src="/brand/scanprogo-logo-dark.png" width="280" style="max-width:100%;height:auto" alt="ScanProGo — Scan • Generate • Go" />
       <h1>You’re offline</h1>
       <p>
         ScanProGo works offline after the application has been installed and cached. Return to the
