@@ -1462,7 +1462,7 @@ footer > div:not(.footer-bottom) {
   }
 }
 
-.logo { flex-shrink: 0; padding: 4px 7px; background: #fff; border-radius: 8px; }
+.logo { flex-shrink: 0; padding: 4px 0; }
 .logo img { display: block; width: 200px; height: auto; }
 footer .logo { align-self: flex-start; }
 .brand-tagline { color: var(--accent) !important; font-size: 14px !important; font-weight: 700; margin: 16px 0 0 !important; }
